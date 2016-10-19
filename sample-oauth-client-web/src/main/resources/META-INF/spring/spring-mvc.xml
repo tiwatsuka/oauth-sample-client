@@ -116,7 +116,9 @@
         </property>
         <property name="defaultErrorView" value="common/error/systemError" />
         <property name="defaultStatusCode" value="500" />
+        <property name="excludedExceptions" value="org.springframework.security.oauth2.client.resource.UserRedirectRequiredException" />
     </bean>
+
     <!-- Setting AOP. -->
     <bean id="handlerExceptionResolverLoggingInterceptor"
         class="org.terasoluna.gfw.web.exception.HandlerExceptionResolverLoggingInterceptor">
@@ -131,5 +133,7 @@
     <bean id="pathMatcher" class="org.springframework.util.AntPathMatcher">
         <property name="trimTokens" value="false" />
     </bean>
+
+    <mvc:view-controller path="/login" view-name="login" />
 
 </beans>
